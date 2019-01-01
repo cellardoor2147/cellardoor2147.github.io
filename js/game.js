@@ -14,6 +14,7 @@ var playerAnimCounter = 0;
 var messageAnimCounter = 0;
 var numSquares = 30;
 var blockWidth = window.innerWidth / numSquares * 0.75;
+var blockHeight = window.innerHeight / numSquares * 2;
 var currentLevel = 3;
 var gameStarted = false;
 var gameMode = "messageIntercom";
@@ -310,7 +311,7 @@ else {
 
 //generate movement variables
 stats.x = blockWidth * 18;
-stats.y = blockWidth * 16;
+stats.y = blockHeight * 5;
 stats.width = blockWidth * 3 * 0.37;
 stats.height = blockWidth * 3;
 stats.speed = 0;
@@ -1901,7 +1902,7 @@ function calculateBlocks(columns = numSquares, rows = numSquares, columnsEnd = n
 	else { //make a specific stroke
 		for (let i = columns; i <= columnsEnd; i++) {
 			for (let j = rows; j <= rowsEnd; j++) {
-				res.push({x: blockWidth * i, y: blockWidth * j, width: width, height: height});
+				res.push({x: width * i, y: height * j, width: width, height: height});
 			}
 		}
 	}
