@@ -89,7 +89,7 @@ if (values[13] === "Yes") {
 }
 
 //generate name
-if (values[0]) {
+if (stats.name) {
 	stats.name = values[0].replace(/%20/g, " ");
 }
 else {
