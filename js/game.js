@@ -13,8 +13,7 @@ var fps = 30;
 var playerAnimCounter = 0;
 var messageAnimCounter = 0;
 var numSquares = 30;
-const blockWidth = window.innerWidth / numSquares * 0.75;
-const blockHeight = window.innerHeight / numSquares * 1;
+var blockWidth = window.innerWidth / numSquares * 0.75;
 var currentLevel = 3;
 var gameStarted = false;
 var gameMode = "messageIntercom";
@@ -64,7 +63,7 @@ pressButton.style.display = "none";
 pressButton.volume = 1;
 
 //floors variables
-var floors = calculateBlocks(0, 0, 37, 25);
+var floors = calculateBlocks(0, 0, 37, 20);
 var arenaFloorTexture = new Image();
 arenaFloorTexture.src = "../assets/sprites/environment/floorArena.png";
 var shopFloorTexture = new Image();
@@ -244,7 +243,7 @@ var canadaGooseJacket = {
 var columbiaJacket = {
 	name: "Columbia Jacket",
 	description: "Its upsettingly ordinary, just like you. Increases defense by 0.25.",
-	value: 250,
+	value: 200,
 	type: "armor",
 	defense: 0.25};
 var smellyHoodie = {
@@ -294,7 +293,7 @@ if (stats.economicClass == "upper") {
 	stats.inventory = [matchaLatte, toothpick];
 	stats.armor = canadaGooseJacket;
 	stats.inspiration = 10;
-	stats.money = 500
+	stats.money = 500;
 }
 else if (stats.economicClass == "middle") {
 	stats.inventory = [lewdJuice, toothpick];
@@ -310,8 +309,8 @@ else {
 }
 
 //generate movement variables
-stats.x = 678;
-stats.y = 600;
+stats.x = blockWidth * 18;
+stats.y = blockWidth * 16;
 stats.width = blockWidth * 3 * 0.37;
 stats.height = blockWidth * 3;
 stats.speed = 0;
@@ -362,16 +361,16 @@ dialogueIndex: 0,
 
 arenaWalls: calculateBlocks(0, 0, 15, 0).concat(
 	calculateBlocks(21, 0, 37, 0).concat(
-	calculateBlocks(0, 0, 0, 25).concat(
-	calculateBlocks(0, 25, 37, 25).concat(
-	calculateBlocks(37, 0, 37, 25))))),
+	calculateBlocks(0, 0, 0, 20).concat(
+	calculateBlocks(0, 20, 37, 20).concat(
+	calculateBlocks(37, 0, 37, 20))))),
 
 shopWalls: calculateBlocks(0, 0, 15, 0).concat(
 	calculateBlocks(21, 0, 37, 0).concat(
-	calculateBlocks(0, 0, 0, 25).concat(
-	calculateBlocks(0, 25, 15, 25).concat(
-	calculateBlocks(21, 25, 37, 25).concat(
-	calculateBlocks(37, 0, 37, 25)))))),
+	calculateBlocks(0, 0, 0, 20).concat(
+	calculateBlocks(0, 20, 15, 20).concat(
+	calculateBlocks(21, 20, 37, 20).concat(
+	calculateBlocks(37, 0, 37, 20)))))),
 
 npcs: [{name: "Shop Keeper",
 			x: 75,
@@ -460,17 +459,17 @@ closedPrevious: false},
 dialogueIndex: 0,
 
 arenaWalls: calculateBlocks(0, 0, 37, 0).concat(
-	calculateBlocks(0, 0, 0, 25).concat(
-	calculateBlocks(0, 25, 15, 25).concat(
-	calculateBlocks(21, 25, 37, 25).concat(
-	calculateBlocks(37, 0, 37, 25))))),
+	calculateBlocks(0, 0, 0, 20).concat(
+	calculateBlocks(0, 20, 15, 20).concat(
+	calculateBlocks(21, 20, 37, 20).concat(
+	calculateBlocks(37, 0, 37, 20))))),
 
 shopWalls: calculateBlocks(0, 0, 15, 0).concat(
 	calculateBlocks(21, 0, 37, 0).concat(
-	calculateBlocks(0, 0, 0, 25).concat(
-	calculateBlocks(0, 25, 15, 25).concat(
-	calculateBlocks(21, 25, 37, 25).concat(
-	calculateBlocks(37, 0, 37, 25)))))),
+	calculateBlocks(0, 0, 0, 20).concat(
+	calculateBlocks(0, 20, 15, 20).concat(
+	calculateBlocks(21, 20, 37, 20).concat(
+	calculateBlocks(37, 0, 37, 20)))))),
 
 npcs: [{name: "Shop Keeper",
 			x: 75,
@@ -604,17 +603,17 @@ closedPrevious: false},
 dialogueIndex: 0,
 
 arenaWalls: calculateBlocks(0, 0, 37, 0).concat(
-	calculateBlocks(0, 0, 0, 25).concat(
-	calculateBlocks(0, 25, 15, 25).concat(
-	calculateBlocks(21, 25, 37, 25).concat(
-	calculateBlocks(37, 0, 37, 25))))),
+	calculateBlocks(0, 0, 0, 20).concat(
+	calculateBlocks(0, 20, 15, 20).concat(
+	calculateBlocks(21, 20, 37, 20).concat(
+	calculateBlocks(37, 0, 37, 20))))),
 
 shopWalls: calculateBlocks(0, 0, 15, 0).concat(
 	calculateBlocks(21, 0, 37, 0).concat(
-	calculateBlocks(0, 0, 0, 25).concat(
-	calculateBlocks(0, 25, 15, 25).concat(
-	calculateBlocks(21, 25, 37, 25).concat(
-	calculateBlocks(37, 0, 37, 25)))))),
+	calculateBlocks(0, 0, 0, 20).concat(
+	calculateBlocks(0, 20, 15, 20).concat(
+	calculateBlocks(21, 20, 37, 20).concat(
+	calculateBlocks(37, 0, 37, 20)))))),
 
 npcs: [{name: "Shop Keeper",
 			x: 75,
@@ -753,17 +752,17 @@ closedPrevious: false},
 dialogueIndex: 0,
 
 arenaWalls: calculateBlocks(0, 0, 37, 0).concat(
-	calculateBlocks(0, 0, 0, 25).concat(
-	calculateBlocks(0, 25, 15, 25).concat(
-	calculateBlocks(21, 25, 37, 25).concat(
-	calculateBlocks(37, 0, 37, 25))))),
+	calculateBlocks(0, 0, 0, 20).concat(
+	calculateBlocks(0, 20, 15, 20).concat(
+	calculateBlocks(21, 20, 37, 20).concat(
+	calculateBlocks(37, 0, 37, 20))))),
 
 shopWalls: calculateBlocks(0, 0, 15, 0).concat(
 	calculateBlocks(21, 0, 37, 0).concat(
-	calculateBlocks(0, 0, 0, 25).concat(
-	calculateBlocks(0, 25, 15, 25).concat(
-	calculateBlocks(21, 25, 37, 25).concat(
-	calculateBlocks(37, 0, 37, 25)))))),
+	calculateBlocks(0, 0, 0, 20).concat(
+	calculateBlocks(0, 20, 15, 20).concat(
+	calculateBlocks(21, 20, 37, 20).concat(
+	calculateBlocks(37, 0, 37, 20)))))),
 
 npcs: [{name: "Shop Keeper",
 			x: 75,
@@ -897,17 +896,17 @@ closedPrevious: false},
 dialogueIndex: 0,
 
 arenaWalls: calculateBlocks(0, 0, 37, 0).concat(
-	calculateBlocks(0, 0, 0, 25).concat(
-	calculateBlocks(0, 25, 15, 25).concat(
-	calculateBlocks(21, 25, 37, 25).concat(
-	calculateBlocks(37, 0, 37, 25))))),
+	calculateBlocks(0, 0, 0, 20).concat(
+	calculateBlocks(0, 20, 15, 20).concat(
+	calculateBlocks(21, 20, 37, 20).concat(
+	calculateBlocks(37, 0, 37, 20))))),
 
 shopWalls: calculateBlocks(0, 0, 15, 0).concat(
 	calculateBlocks(21, 0, 37, 0).concat(
-	calculateBlocks(0, 0, 0, 25).concat(
-	calculateBlocks(0, 25, 15, 25).concat(
-	calculateBlocks(21, 25, 37, 25).concat(
-	calculateBlocks(37, 0, 37, 25)))))),
+	calculateBlocks(0, 0, 0, 20).concat(
+	calculateBlocks(0, 20, 15, 20).concat(
+	calculateBlocks(21, 20, 37, 20).concat(
+	calculateBlocks(37, 0, 37, 20)))))),
 
 npcs: [{name: "Shop Keeper",
 			x: 75,
@@ -983,7 +982,7 @@ enemies: [[{name: "Football Player",
 			location: "arena"},
 		{name: "Football Player",
 			x: 1300,
-			y: 250,
+			y: 200,
 			speed: 11,
 			direction: "left",
 			width: blockWidth * 3 * 0.37,
@@ -1154,17 +1153,17 @@ closedPrevious: false},
 dialogueIndex: 0,
 
 arenaWalls: calculateBlocks(0, 0, 37, 0).concat(
-	calculateBlocks(0, 0, 0, 25).concat(
-	calculateBlocks(0, 25, 15, 25).concat(
-	calculateBlocks(21, 25, 37, 25).concat(
-	calculateBlocks(37, 0, 37, 25))))),
+	calculateBlocks(0, 0, 0, 20).concat(
+	calculateBlocks(0, 20, 15, 20).concat(
+	calculateBlocks(21, 20, 37, 20).concat(
+	calculateBlocks(37, 0, 37, 20))))),
 
 shopWalls: calculateBlocks(0, 0, 15, 0).concat(
 	calculateBlocks(21, 0, 37, 0).concat(
-	calculateBlocks(0, 0, 0, 25).concat(
-	calculateBlocks(0, 25, 15, 25).concat(
-	calculateBlocks(21, 25, 37, 25).concat(
-	calculateBlocks(37, 0, 37, 25)))))),
+	calculateBlocks(0, 0, 0, 20).concat(
+	calculateBlocks(0, 20, 15, 20).concat(
+	calculateBlocks(21, 20, 37, 20).concat(
+	calculateBlocks(37, 0, 37, 20)))))),
 
 npcs: [{name: "Shop Keeper",
 			x: 75,
@@ -1285,17 +1284,17 @@ closedPrevious: false},
 dialogueIndex: 0,
 
 arenaWalls: calculateBlocks(0, 0, 37, 0).concat(
-	calculateBlocks(0, 0, 0, 25).concat(
-	calculateBlocks(0, 25, 15, 25).concat(
-	calculateBlocks(21, 25, 37, 25).concat(
-	calculateBlocks(37, 0, 37, 25))))),
+	calculateBlocks(0, 0, 0, 20).concat(
+	calculateBlocks(0, 20, 15, 20).concat(
+	calculateBlocks(21, 20, 37, 20).concat(
+	calculateBlocks(37, 0, 37, 20))))),
 
 shopWalls: calculateBlocks(0, 0, 15, 0).concat(
 	calculateBlocks(21, 0, 37, 0).concat(
-	calculateBlocks(0, 0, 0, 25).concat(
-	calculateBlocks(0, 25, 15, 25).concat(
-	calculateBlocks(21, 25, 37, 25).concat(
-	calculateBlocks(37, 0, 37, 25)))))),
+	calculateBlocks(0, 0, 0, 20).concat(
+	calculateBlocks(0, 20, 15, 20).concat(
+	calculateBlocks(21, 20, 37, 20).concat(
+	calculateBlocks(37, 0, 37, 20)))))),
 
 npcs: [{name: "A Formula Sheet",
 			x: 675,
@@ -1889,20 +1888,20 @@ function getRandomInt(min, max) {
 //
 //
 function calculateBlocks(columns = numSquares, rows = numSquares, columnsEnd = numSquares, 
-						rowsEnd = numSquares, width = blockWidth, height = blockHeight) {
+						rowsEnd = numSquares, width = blockWidth, height = blockWidth) {
 	let res = new Array();
 
 	if (columns === numSquares && rows === numSquares) { //fill entire board
 		for (let i = 0; i < columns; i++) {
 			for (let j = 0; j < rows; j++) {
-				res.push({x: blockWidth * i, y: blockHeight * j, width: width, height: height,});
+				res.push({x: width * i, y: height * j, width: width, height: height,});
 			}
 		}
 	}
 	else { //make a specific stroke
 		for (let i = columns; i <= columnsEnd; i++) {
 			for (let j = rows; j <= rowsEnd; j++) {
-				res.push({x: blockWidth * i, y: blockHeight * j, width: width, height: height});
+				res.push({x: blockWidth * i, y: blockWidth * j, width: width, height: height});
 			}
 		}
 	}
@@ -2614,8 +2613,8 @@ function draw() {
 	}
 
 	//draw bounds box
-	screenContext.fillStyle = "black";
-	screenContext.fillRect(600, 771, 150, 10);
+	// screenContext.fillStyle = "black";
+	// screenContext.fillRect(600, 771, 150, 10);
 }
 
 //
@@ -3122,9 +3121,9 @@ function update() {
 		!levels[currentLevel].closedShop) {
 		levels[currentLevel].arenaWalls = calculateBlocks(0, 0, 15, 0).concat(
 									calculateBlocks(21, 0, 37, 0).concat(
-									calculateBlocks(0, 0, 0, 25).concat(
-									calculateBlocks(0, 25, 37, 25).concat(
-									calculateBlocks(37, 0, 37, 25)))));
+									calculateBlocks(0, 0, 0, 20).concat(
+									calculateBlocks(0, 20, 37, 20).concat(
+									calculateBlocks(37, 0, 37, 20)))));
 
 		doorShut.play();
 		levels[currentLevel].closedShop = true;
@@ -3135,9 +3134,9 @@ function update() {
 		stats.y < 620) {
 		levels[currentLevel].shopWalls = calculateBlocks(0, 0, 15, 0).concat(
 									calculateBlocks(21, 0, 37, 0).concat(
-									calculateBlocks(0, 0, 0, 25).concat(
-									calculateBlocks(0, 25, 37, 25).concat(
-									calculateBlocks(37, 0, 37, 25)))));
+									calculateBlocks(0, 0, 0, 20).concat(
+									calculateBlocks(0, 20, 37, 20).concat(
+									calculateBlocks(37, 0, 37, 20)))));
 		doorShut.play();
 		levels[currentLevel].closedPrevious = true;
 	}
@@ -3147,9 +3146,9 @@ function update() {
 		!levels[currentLevel].closedArena &&
 		stats.y < 620) {
 		levels[currentLevel].arenaWalls = calculateBlocks(0, 0, 37, 0).concat(
-									calculateBlocks(0, 0, 0, 25).concat(
-									calculateBlocks(0, 25, 37, 25).concat(
-									calculateBlocks(37, 0, 37, 25))));
+									calculateBlocks(0, 0, 0, 20).concat(
+									calculateBlocks(0, 20, 37, 20).concat(
+									calculateBlocks(37, 0, 37, 20))));
 		doorShut.play();
 		levels[currentLevel].closedArena = true;
 	}
