@@ -1,0 +1,45 @@
+.filemanager {
+	margin-top: 0;
+	top: 0;
+	width: 100%;
+}
+
+#filehead {
+	position: absolute;
+	top: 0;
+	z-index: 2;
+	height: 75px;
+}
+
+#filetext {
+	position: absolute;
+	top: 20px;
+	left: 90px;
+	z-index: 2;
+	font-size: 25px;
+	height: 60px;
+	width: 60px;
+}
+
+#foldericon {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	z-index: 2;
+	height: 60px;
+	width: 60px;
+}
+
+#filebuttons {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	z-index: 2;
+	height: 60px;
+	width: 200px;
+}
+
+#filebody {
+	margin-top: 75px;
+	height: calc(100vh - 150px);
+}
