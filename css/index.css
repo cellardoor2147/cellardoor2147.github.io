@@ -18,6 +18,7 @@ body {
 	font-family: DOS;
 	color: white;
 	font-size: calc(12px + 0.75vw);
+	overflow: hidden;
 }
 
 .col {
@@ -50,16 +51,8 @@ body {
 	border-top: solid;
 }
 
-#joshuareed95 {
-	margin: 0;
-	padding: 0;
-	left: calc(75px + 20vw);
-	position: absolute;
-	width: calc(150px + 15vw);
-	height: calc(150px + 15vw);
-}
-
 #startmenuwidget {
+	left: 0px;
 	position: absolute;
 	bottom: 0;
 	z-index: 3;
@@ -78,6 +71,7 @@ body {
 }
 
 #startmenubackground {
+	left: 0px;
 	position: absolute;
 	bottom: 0;
 	z-index: 2;
