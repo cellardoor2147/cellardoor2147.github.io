@@ -5,7 +5,8 @@
 
 @font-face {
 	font-family: post;
-	src: url("../fonts/post.ttf");
+	src: url("../fonts/post.eot"),
+		url("../fonts/post.ttf") format("truetype");
 }
 
 * {
