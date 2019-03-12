@@ -13,7 +13,7 @@ function setTime() {
 		m = "0" + m
 	}
 
-	if (h == 12) {
+	if (h == 12 || h == 0) {
 		h = 12
 	}
 	else {
