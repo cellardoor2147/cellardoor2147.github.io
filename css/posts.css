@@ -90,3 +90,7 @@ h1 {
 	width: 95%;
 	margin: 0 auto;
 }
+
+li p {
+	margin-bottom: 0;
+}
