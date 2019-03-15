@@ -26,3 +26,7 @@ function setTime() {
 
 window.onload = setTime
 window.setInterval(setTime, 500)
+
+$('html, body').on('touchstart touchmove', function(e){ 
+     e.preventDefault(); 
+});
